@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Tugas</title>
+</head>
+
+<body>
+  <div id="Lat 3 Tugas">
+      <h3>Informasi lebih lanjut tentang</h3>
+      <a :href="url">SMK Telkom Malang</a>
+  </div>
+  <script src="tugas.js"></script>
+  <script>
+      var tugas = new Vue({
+          el: '#tugas',
+          data: {
+              'url': 'https://smktelkom-mlg.sch.id/'
+          }
+      });
+  </script>
+</body>
+
+</html>

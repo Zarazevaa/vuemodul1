@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Latihan 4</title>
+  </head>
+
+  <body>
+    <div id="lat4">
+      <form>
+        <input type="text" placeholder="Masukkan nama anda" v-model="name">
+        <br> <br>
+        <label>Nama saya adalah: {{namaSaya}} </label>
+      </form>
+    </div>
+  <script src="lat4.js"></script>
+  <script>
+    var lat4 = new Vue({
+      el: '#lat4',
+      data: {
+        "namaSaya" : "Zara Zeva Az Zurra"
+      }
+    });
+  </script>
+</body>

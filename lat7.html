@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Latihan 7</title>
+  </head>
+
+  <body>
+    <div id="lat7">
+      <h3>Masukkan Nama Guru</h3>
+      <form v-on:submit.prevent>
+        <input type="text" name="namaSiswa" id="namaSiswa" @keyup.enter="simpan" v-model="guru">
+        <button type="button" @click="simpan">Simpan</button>
+      </form>
+      <br>
+      <br>
+      <table border="1" style="border-collapse: collapse" v-if="dataGuru.length > 0">
+        <tr>
+          <thead>
+            <th style="width: 30px">#</th>
+            <th style="width: 200px">NamaGuru</th>
+          </thead>
+        </tr>
+        <tr>
+          <tbody v-for="(guru, index) in dataGuru" :key="index">
+            <td>{{index+1}}</td>
+            <td>{{guru}}</td>
+          </tbody>
+        </tr>
+      </table>
+      <h4 v-else>Tidak ada data</h4>
+      <button @click="pesan">Tampil Pesan</button>
+    </div>
+  <script src="lat7.js"></script>
+  <script>
+    var lat7 = new Vue({
+      el: '#lat7',
+      methods: {
+        pesan: function() {
+          alert ("Selamat belajar Vue.js")
+        },
+        simpan: function() {
+        this.dataGuru.push(this.guru);
+        this.guru ="";
+      }
+      },
+      data : {
+        'dataGuru' : [
+                      {'nama' : 'Arya', 'kelas' : 'XRPL1'},
+                      {'nama' : 'Bella', 'kelas' : 'XIRPL2'},
+                      {'nama' : 'Cintya', 'kelas' : 'XIRPL1'},
+                      {'nama' : 'Doni', 'kelas' : 'XIRPL2'},
+                      {'nama' : 'Elma', 'kelas' : 'XIIRPL1'},
+                      {'nama' : 'Farhan', 'kelas' : 'XIIRPL2'},
+                    ],
+        'guru' : ''
+      }
+    });
+  </script>
+</body>
